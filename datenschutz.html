@@ -5,29 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutz | Finn W.</title>
     <style>
-        :root { --apple-bg: #ffffff; --apple-text: #1d1d1f; --apple-blue: #0071e3; --apple-gray: #f5f5f7; --apple-text-secondary: #86868b; }
-        body { font-family: -apple-system, sans-serif; background: #fff; color: #1d1d1f; padding: 100px 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-        h1 { font-size: 40px; margin-bottom: 40px; letter-spacing: -1px; }
-        footer { margin-top: 100px; padding-top: 40px; border-top: 1px solid #eee; text-align: center; }
-        .footer-socials { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
-        .footer-socials a { font-size: 14px; font-weight: 500; padding: 8px 16px; background: #f5f5f7; border-radius: 15px; color: #1d1d1f; text-decoration: none; }
-        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 25px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); max-width: 400px; z-index: 4000; border: 1px solid rgba(0,0,0,0.05); text-align: left; }
+        :root { --apple-bg: #ffffff; --apple-text: #1d1d1f; --apple-gray: #f5f5f7; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--apple-bg); color: var(--apple-text); line-height: 1.6; padding: 60px 20px; }
+        .content { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 32px; margin-bottom: 30px; letter-spacing: -1px; }
+        h2 { font-size: 20px; margin-top: 40px; margin-bottom: 15px; font-weight: 600; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        p { margin-bottom: 15px; color: #3c3c43; }
+        code { background: var(--apple-gray); padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+        .back-link { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #0071e3; font-weight: 500; }
     </style>
 </head>
 <body>
-    <a href="index.html" style="font-weight: 500; color: #0071e3; text-decoration: none;">← Zurück</a>
-    <h1 style="margin-top: 20px;">Datenschutz</h1>
-    <p>Diese Website ist ein privates Portfolio. Es werden keine Analyse-Tools oder Werbe-Tracker eingesetzt.</p>
-    <p style="margin-top: 20px;"><strong>YouTube:</strong> Videos werden erst nach deiner Zustimmung geladen.</p>
-    <footer>
-        <div class="footer-socials"><a href="https://www.instagram.com/finnw_foto_videografie?igsh=ZGZqZXBzMXNpMWZ1" target="_blank">Instagram</a><a href="https://www.youtube.com/@FinnwFotovideografie" target="_blank">YouTube</a><a href="https://www.tiktok.com/@finnw_foto_videografie?_r=1&_t=ZG-937rgkUyYQD" target="_blank">TikTok</a></div>
-        <p style="font-size: 13px; color: #86868b; margin-bottom: 20px;">Diese Website dient ausschließlich als Portfolio, um meine aktuellen Werke zu präsentieren.</p>
-        <p style="font-size: 12px; color: #86868b;">&copy; 2026 Finn Wasmer | <a href="impressum.html" style="color:inherit;">Impressum</a></p>
-    </footer>
-    <div id="cookie-banner"><p style="font-weight: 600;">Datenschutz & Cookies</p><p style="font-size: 13px; color: var(--apple-text-secondary); margin-top: 5px;">Für die Videos im Portfolio benötigt YouTube deine Zustimmung.</p><div style="display:flex; gap:10px; margin-top:15px;"><button onclick="closeBanner('denied')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer;">Ablehnen</button><button onclick="closeBanner('accepted')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer; background:var(--apple-blue); color:white;">Akzeptieren</button></div></div>
-    <script>
-        if (localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display = 'none';
-        function closeBanner(s) { localStorage.setItem('cookieConsent', s); document.getElementById('cookie-banner').style.display = 'none'; location.reload(); }
-    </script>
+    <div class="content">
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+        <h1>Datenschutzerklärung</h1>
+
+        <h2>1. Datenschutz auf einen Blick</h2>
+        <p>Ich freue mich über Ihr Interesse an meiner Website. Der Schutz Ihrer Privatsphäre ist mir sehr wichtig. Nachstehend informiere ich Sie ausführlich über den Umgang mit Ihren Daten.</p>
+
+        <h2>2. Verantwortlicher</h2>
+        <p>Finn Wasmer <br>
+        Blauenblick 4/2<br>
+        79588, Efringen-Kirchen<br>
+        E-Mail: Finnfotovideografie@outlook.de</p>
+
+        <h2>3. Hosting und Infrastruktur</h2>
+        <p>Meine Website wird bei externen Dienstleistern gehostet:</p>
+        <p><strong>GitHub Pages:</strong> Die Website-Inhalte (HTML, CSS, Bilder) werden auf den Servern von GitHub (GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf der Seite werden Daten wie Ihre IP-Adresse an GitHub übertragen. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer stabilen Bereitstellung der Website).</p>
+        <p><strong>Strato:</strong> Die Domain (Web-Adresse) wird über die Strato AG (Otto-Ostrowski-Straße 7, 10249 Berlin) verwaltet. Strato leitet die Anfragen an den Host (GitHub) weiter. Hierbei können ebenfalls Verbindungsdaten verarbeitet werden.</p>
+
+        <h2>4. LocalStorage (Einwilligungs-Speicherung)</h2>
+        <p>Um Ihre Entscheidung bezüglich der Aktivierung von YouTube-Videos zu speichern, nutzt diese Website den <code>LocalStorage</code> Ihres Browsers. Es wird ein Wert unter dem Schlüssel <code>cookieConsent</code> abgelegt. Dies verhindert, dass Sie bei jedem Seitenwechsel erneut das Banner bestätigen müssen. Diese Daten verbleiben lokal auf Ihrem Gerät und werden nicht an mich übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+        <h2>5. YouTube-Videos (Zwei-Klick-Lösung)</h2>
+        <p>Ich binde Videos der Plattform “YouTube” des Anbieters Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) ein.</p>
+        <p><strong>Besonderheit:</strong> Standardmäßig sind alle Videos deaktiviert. Erst wenn Sie im Banner auf "Akzeptieren" klicken, wird eine Verbindung zu den Google-Servern hergestellt. Google erfährt dadurch, dass Sie meine Seite besuchen und speichert ggf. Cookies in Ihrem Browser. Wenn Sie nicht klicken, fließen keine Daten an Google.</p>
+        <p>Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.</p>
+
+        <h2>6. Ihre Rechte</h2>
+        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit und ein Beschwerderecht bei einer Aufsichtsbehörde.</p>
+    </div>
 </body>
 </html>
