@@ -3,60 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
     <title>Videografie | Finn W.</title>
     <style>
         :root { --apple-bg: #ffffff; --apple-text: #1d1d1f; --apple-blue: #0071e3; --apple-gray: #f5f5f7; --apple-text-secondary: #86868b; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, sans-serif; background: var(--apple-bg); overflow-x: hidden; }
-        nav { position: fixed; top: 0; width: 100%; height: 48px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); display: flex; justify-content: space-between; align-items: center; padding: 0 22px; z-index: 3000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--apple-bg); overflow-x: hidden; color: var(--apple-text); line-height: 1.5; }
+        
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; height: 48px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; justify-content: space-between; align-items: center; padding: 0 22px; z-index: 3000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .logo { font-weight: 500; font-size: 17px; text-decoration: none; color: var(--apple-text); z-index: 3001; }
         .menu-toggle { width: 30px; height: 30px; position: relative; cursor: pointer; z-index: 3001; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .bar { width: 18px; height: 1.2px; background-color: var(--apple-text); position: absolute; transition: 0.3s; }
         .bar1 { transform: translateY(-3.5px); } .bar2 { transform: translateY(3.5px); }
         .open .bar1 { transform: rotate(45deg); } .open .bar2 { transform: rotate(-45deg); }
+        
         #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: white; display: flex; flex-direction: column; padding: 100px 40px; z-index: 2000; opacity: 0; visibility: hidden; transition: 0.4s; }
         #menu-overlay.active { opacity: 1; visibility: visible; }
         .nav-links a { font-size: 38px; font-weight: 600; text-decoration: none; color: var(--apple-text); display: block; margin-bottom: 25px; }
+
+        /* Video Section */
         .container { padding-top: 100px; max-width: 1000px; margin: 0 auto; padding-bottom: 100px; padding-left: 20px; padding-right: 20px; }
-        h1 { font-size: 48px; text-align: center; margin-bottom: 50px; letter-spacing: -1.5px; }
-        .video-card { background: var(--apple-gray); border-radius: 30px; margin-bottom: 60px; overflow: hidden; }
-        .video-placeholder { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .video-lock-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px; }
-        .play-circle { width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 30; cursor: pointer; transition: 0.3s; }
+        h1 { font-size: 48px; text-align: center; margin-bottom: 50px; letter-spacing: -1.5px; font-weight: 700; }
+        
+        .video-card { background: var(--apple-gray); border-radius: 30px; margin-bottom: 60px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .video-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; }
+        
+        /* Blockierter Zustand */
+        .video-blocked { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px; }
+        .video-blocked p { margin-bottom: 5px; }
+        
+        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .video-info { padding: 30px; background: white; }
+        .video-info h3 { font-size: 22px; margin-bottom: 5px; font-weight: 600; }
+        .video-info p { color: var(--apple-text-secondary); font-size: 16px; }
+
+        /* Footer */
         footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
         .footer-socials { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
         .footer-socials a { text-decoration: none; color: var(--apple-text); font-size: 14px; font-weight: 500; padding: 8px 16px; background: var(--apple-gray); border-radius: 15px; }
-        .footer-note { font-size: 13px; color: var(--apple-text-secondary); max-width: 500px; margin: 0 auto 20px; }
-        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 25px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); max-width: 400px; z-index: 4000; border: 1px solid rgba(0,0,0,0.05); }
+
+        /* Cookie Banner */
+        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 25px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); max-width: 400px; z-index: 4000; border: 1px solid rgba(0,0,0,0.05); text-align: left; }
+        button { cursor: pointer; border: none; transition: 0.2s; font-size: 15px; }
+        button:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
-    <nav><a href="index.html" class="logo">Finn W.</a><div class="menu-toggle" id="menu-btn" onclick="toggleMenu()"><div class="bar bar1"></div><div class="bar bar2"></div></div></nav>
-    <div id="menu-overlay"><div class="nav-links"><a href="index.html">Startseite</a><a href="videografie.html">Videografie</a><a href="ausruestung.html">Ausrüstung</a></div></div>
-    <div class="container">
-        <h1>Videografie.</h1>
-        <div class="video-card">
-            <div class="video-placeholder" id="vid1">
-                <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1000" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0.6;">
-                <div class="video-lock-overlay"><p style="font-weight:600;">Video blockiert</p><p style="font-size:12px; opacity:0.7; margin-top:5px;">Zustimmung erforderlich.</p></div>
-                <div class="play-circle" id="play1" style="display:none;" onclick="activateVideo('vid1', 'dQw4w9WgXcQ')"><svg viewBox="0 0 24 24" width="25" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-            </div>
-            <div class="video-info" style="padding:30px; background: white;"><h3>Showreel</h3><p>Meine besten Arbeiten.</p></div>
+    <nav>
+        <a href="index.html" class="logo">Finn W.</a>
+        <div class="menu-toggle" id="menu-btn" onclick="toggleMenu()">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+        </div>
+    </nav>
+
+    <div id="menu-overlay">
+        <div class="nav-links">
+            <a href="index.html">Startseite</a>
+            <a href="videografie.html">Videografie</a>
+            <a href="ausruestung.html">Ausrüstung</a>
         </div>
     </div>
+    
+    <div class="container">
+        <h1>Videografie.</h1>
+        <div id="video-list">
+            </div>
+    </div>
+
     <footer>
-        <div class="footer-socials"><a href="https://www.instagram.com/finnw_foto_videografie?igsh=ZGZqZXBzMXNpMWZ1" target="_blank">Instagram</a><a href="https://www.youtube.com/@FinnwFotovideografie" target="_blank">YouTube</a><a href="https://www.tiktok.com/@finnw_foto_videografie?_r=1&_t=ZG-937rgkUyYQD" target="_blank">TikTok</a></div>
-        <p class="footer-note">Diese Website dient ausschließlich als Portfolio, um meine aktuellen Werke zu präsentieren.</p>
-        <p style="margin-bottom: 10px; font-size: 14px;">&copy; 2026 Finn Wasmer</p>
-        <div style="display:flex; justify-content:center; gap:20px; font-size:12px;"><a href="impressum.html" style="text-decoration:none; color:#86868b;">Impressum</a><a href="datenschutz.html" style="text-decoration:none; color:#86868b;">Datenschutz</a></div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/finnw_foto_videografie?igsh=ZGZqZXBzMXNpMWZ1" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@FinnwFotovideografie" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@finnw_foto_videografie?_r=1&_t=ZG-937rgkUyYQD" target="_blank">TikTok</a>
+        </div>
+        <p style="font-size: 14px; color: var(--apple-text-secondary);">&copy; 2026 Finn Wasmer</p>
     </footer>
-    <div id="cookie-banner"><p style="font-weight: 600;">Datenschutz & Cookies</p><p style="font-size: 13px; color: var(--apple-text-secondary); margin-top: 5px;">Für die Videos im Portfolio benötigt YouTube deine Zustimmung.</p><div style="display:flex; gap:10px; margin-top:15px;"><button onclick="closeBanner('denied')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer;">Ablehnen</button><button onclick="closeBanner('accepted')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer; background:var(--apple-blue); color:white;">Akzeptieren</button></div></div>
+
+    <div id="cookie-banner">
+        <p style="font-weight: 600;">Videos aktivieren?</p>
+        <p style="font-size: 13px; color: var(--apple-text-secondary); margin-top: 5px;">Klicke auf Akzeptieren, um die YouTube-Inhalte zu laden.</p>
+        <div style="display:flex; gap:10px; margin-top:15px;">
+            <button onclick="closeBanner('denied')" style="flex:1; padding:12px; border-radius:12px; background:#eee;">Nein</button>
+            <button onclick="closeBanner('accepted')" style="flex:1; padding:12px; border-radius:12px; background:var(--apple-blue); color:white; font-weight:600;">Akzeptieren</button>
+        </div>
+    </div>
+
     <script>
-        function toggleMenu() { document.getElementById('menu-btn').classList.toggle('open'); const o = document.getElementById('menu-overlay'); o.classList.toggle('active'); document.body.style.overflow = o.classList.contains('active') ? 'hidden' : 'auto'; }
-        window.onload = function() { if (localStorage.getItem('cookieConsent') === 'accepted') { document.querySelectorAll('.video-lock-overlay').forEach(el => el.style.display = 'none'); document.querySelectorAll('.play-circle').forEach(el => el.style.display = 'flex'); } };
-        function activateVideo(cId, vId) { document.getElementById(cId).innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${vId}?autoplay=1" style="width:100%;height:100%;position:absolute;top:0;left:0;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`; }
-        if (localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display = 'none';
-        function closeBanner(s) { localStorage.setItem('cookieConsent', s); document.getElementById('cookie-banner').style.display = 'none'; location.reload(); }
+        // DIE VIDEO DATEN
+        // Reihenfolge: Das letzte (DMfweppN3DI) ganz oben, das Ur-Video (uEe8H-WWtTM) ganz unten.
+        const videos = [
+            { id: 'DMfweppN3DI', title: 'Neuestes Projekt', desc: 'Frische Visuals' },
+            { id: '3dXEdgOWq-I', title: 'Storytelling 02', desc: 'Atmosphärischer Schnitt' },
+            { id: 'F7Q9U2HWWCg', title: 'Creative Cut', desc: 'Spezialeffekte & Tempo' },
+            { id: '6SfrqAdcVNo', title: 'Event Highlights', desc: 'Recap Video' },
+            { id: 'fgDsEjbHpJ8', title: 'Street Photography', desc: 'Urban Exploring' },
+            { id: 'ZPySKg_7BWY', title: 'Nature Mood', desc: 'Landschaftsaufnahmen' },
+            { id: 'QpTvgBHodDs', title: 'Drone Shots', desc: 'Perspektiven von oben' },
+            { id: 'uEe8H-WWtTM', title: 'Showreel / Erstes Video', desc: 'Die Anfänge' }
+        ];
+
+        function toggleMenu() { 
+            document.getElementById('menu-btn').classList.toggle('open'); 
+            const o = document.getElementById('menu-overlay'); 
+            o.classList.toggle('active'); 
+            document.body.style.overflow = o.classList.contains('active') ? 'hidden' : 'auto'; 
+        }
+
+        const videoList = document.getElementById('video-list');
+        const consent = localStorage.getItem('cookieConsent');
+
+        videos.forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            
+            let contentHTML = '';
+            if (consent === 'accepted') {
+                // Video wird geladen
+                contentHTML = `
+                    <iframe 
+                        src="https://www.youtube.com/embed/${video.id}?rel=0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>`;
+            } else {
+                // Sperr-Hinweis wird angezeigt
+                contentHTML = `
+                    <div class="video-blocked">
+                        <p style="font-weight:600;">Video blockiert</p>
+                        <p style="font-size:12px; opacity:0.6;">Bitte Cookies akzeptieren</p>
+                    </div>`;
+            }
+
+            card.innerHTML = `
+                <div class="video-container">${contentHTML}</div>
+                <div class="video-info">
+                    <h3>${video.title}</h3>
+                    <p>${video.desc}</p>
+                </div>
+            `;
+            videoList.appendChild(card);
+        });
+
+        // Banner verstecken wenn Entscheidung vorliegt
+        if (consent) document.getElementById('cookie-banner').style.display = 'none';
+        
+        function closeBanner(status) { 
+            localStorage.setItem('cookieConsent', status); 
+            location.reload(); // Seite neu laden um Iframes zu aktivieren
+        }
     </script>
 </body>
 </html>
