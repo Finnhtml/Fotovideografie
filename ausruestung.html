@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausrüstung | Finn W.</title>
+    <style>
+        :root { --apple-bg: #ffffff; --apple-text: #1d1d1f; --apple-blue: #0071e3; --apple-gray: #f5f5f7; --apple-text-secondary: #86868b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: var(--apple-bg); color: var(--apple-text); }
+        nav { position: fixed; top: 0; width: 100%; height: 48px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); display: flex; justify-content: space-between; align-items: center; padding: 0 22px; z-index: 3000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-weight: 500; font-size: 17px; text-decoration: none; color: var(--apple-text); z-index: 3001; }
+        .menu-toggle { width: 30px; height: 30px; position: relative; cursor: pointer; z-index: 3001; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .bar { width: 18px; height: 1.2px; background-color: var(--apple-text); position: absolute; transition: 0.3s; }
+        .bar1 { transform: translateY(-3.5px); } .bar2 { transform: translateY(3.5px); }
+        .open .bar1 { transform: rotate(45deg); } .open .bar2 { transform: rotate(-45deg); }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: white; display: flex; flex-direction: column; padding: 100px 40px; z-index: 2000; opacity: 0; visibility: hidden; transition: 0.4s; }
+        #menu-overlay.active { opacity: 1; visibility: visible; }
+        .nav-links a { font-size: 38px; font-weight: 600; text-decoration: none; color: var(--apple-text); display: block; margin-bottom: 25px; }
+        .container { padding-top: 100px; max-width: 800px; margin: 0 auto; padding-bottom: 100px; padding-left: 20px; padding-right: 20px; }
+        h1 { font-size: 48px; text-align: center; margin-bottom: 50px; letter-spacing: -1.5px; }
+        .gear-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .gear-item { background: var(--apple-gray); padding: 25px; border-radius: 20px; }
+        .gear-category { font-size: 12px; text-transform: uppercase; color: var(--apple-blue); font-weight: 600; margin-bottom: 8px; }
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-socials { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
+        .footer-socials a { text-decoration: none; color: var(--apple-text); font-size: 14px; font-weight: 500; padding: 8px 16px; background: var(--apple-gray); border-radius: 15px; }
+        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 25px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); max-width: 400px; z-index: 4000; border: 1px solid rgba(0,0,0,0.05); }
+        @media (max-width: 600px) { .gear-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav><a href="index.html" class="logo">Finn W.</a><div class="menu-toggle" id="menu-btn" onclick="toggleMenu()"><div class="bar bar1"></div><div class="bar bar2"></div></div></nav>
+    <div id="menu-overlay"><div class="nav-links"><a href="index.html">Startseite</a><a href="videografie.html">Videografie</a><a href="ausruestung.html">Ausrüstung</a></div></div>
+    <div class="container">
+        <h1>Mein Gear.</h1>
+        <div class="gear-grid">
+            <div class="gear-item"><div class="gear-category">Kamera</div><div style="font-size: 18px; font-weight: 500;">Sony ZV-E10</div></div>
+            <div class="gear-item"><div class="gear-category">Software</div><div style="font-size: 18px; font-weight: 500;">DaVinci Resolve</div></div>
+            <div class="gear-item"><div class="gear-category">Gimbal</div><div style="font-size: 18px; font-weight: 500;">DJI RS 4 Mini</div></div>
+            <div class="gear-item"><div class="gear-category">Drohnen</div><div style="font-size: 18px; font-weight: 500;">DJI Mini 3 Pro & Neo FPV</div></div>
+            <div class="gear-item"><div class="gear-category">360°</div><div style="font-size: 18px; font-weight: 500;">Insta360 One X2</div></div>
+            <div class="gear-item"><div class="gear-category">Audio & Licht</div><div style="font-size: 18px; font-weight: 500;">Funk-Mikros & Kamera-Licht</div></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-socials"><a href="https://www.instagram.com/finnw_foto_videografie?igsh=ZGZqZXBzMXNpMWZ1" target="_blank">Instagram</a><a href="https://www.youtube.com/@FinnwFotovideografie" target="_blank">YouTube</a><a href="https://www.tiktok.com/@finnw_foto_videografie?_r=1&_t=ZG-937rgkUyYQD" target="_blank">TikTok</a></div>
+        <p style="font-size: 13px; color: var(--apple-text-secondary); margin-bottom: 20px;">Diese Website dient ausschließlich als Portfolio, um meine aktuellen Werke zu präsentieren.</p>
+        <p style="font-size: 14px;">&copy; 2026 Finn Wasmer</p>
+        <div style="display:flex; justify-content:center; gap:20px; font-size:12px; margin-top: 10px;"><a href="impressum.html" style="text-decoration:none; color:#86868b;">Impressum</a><a href="datenschutz.html" style="text-decoration:none; color:#86868b;">Datenschutz</a></div>
+    </footer>
+    <div id="cookie-banner"><p style="font-weight: 600;">Datenschutz & Cookies</p><p style="font-size: 13px; color: var(--apple-text-secondary); margin-top: 5px;">Für die Videos im Portfolio benötigt YouTube deine Zustimmung.</p><div style="display:flex; gap:10px; margin-top:15px;"><button onclick="closeBanner('denied')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer;">Ablehnen</button><button onclick="closeBanner('accepted')" style="flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer; background:var(--apple-blue); color:white;">Akzeptieren</button></div></div>
+    <script>
+        function toggleMenu() { document.getElementById('menu-btn').classList.toggle('open'); const o = document.getElementById('menu-overlay'); o.classList.toggle('active'); document.body.style.overflow = o.classList.contains('active') ? 'hidden' : 'auto'; }
+        if (localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display = 'none';
+        function closeBanner(s) { localStorage.setItem('cookieConsent', s); document.getElementById('cookie-banner').style.display = 'none'; location.reload(); }
+    </script>
+</body>
+</html>
