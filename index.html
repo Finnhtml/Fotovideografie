@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Finn W. | Foto & Videografie</title>
+    <title>FinnW Media</title>
     <style>
         :root { --apple-bg: #ffffff; --apple-text: #1d1d1f; --apple-blue: #0071e3; --apple-gray: #f5f5f7; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,13 +23,13 @@
         .nav-links a { font-size: 38px; font-weight: 600; text-decoration: none; color: var(--apple-text); display: block; margin-bottom: 25px; }
         
         .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        /* Hier wird das Logo für die Animation und Größe angesprochen */
         .hero-logo { width: 100%; max-width: 500px; height: auto; margin-bottom: 20px; animation: fadeIn 1.5s ease-out; }
         .hero h1 { font-size: 48px; letter-spacing: -1.2px; font-weight: 700; }
         .hero p { font-size: 24px; color: #86868b; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Bereich für das Google Formular */
         .form-section { padding: 60px 20px; text-align: center; background: #fff; }
         .form-placeholder { max-width: 800px; margin: 0 auto; padding: 50px 20px; background: var(--apple-gray); border-radius: 30px; border: 1px solid rgba(0,0,0,0.05); }
         .btn-load { background: var(--apple-text); color: white; border: none; padding: 14px 28px; border-radius: 14px; font-weight: 600; cursor: pointer; font-size: 16px; transition: 0.3s; }
@@ -45,7 +45,7 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo-nav">Finn W.</a>
+        <a href="index.html" class="logo-nav">FinnW Media</a>
         <div class="menu-toggle" id="menu-btn" onclick="toggleMenu()">
             <div class="bar bar1"></div>
             <div class="bar bar2"></div>
@@ -61,8 +61,8 @@
     </div>
     
     <section class="hero">
-        <img src="https://github.com/Finnhtml/Fotovideografie/blob/main/Logo%20Finn%20Foto%20Videografie.png?raw=true" alt="Finn Foto Videografie Logo" class="hero-logo">
-        <h1>Finn W. Foto/Videografie</h1>
+        <img src="logo.png" alt="FinnW Media Logo" class="hero-logo">
+        <h1>Finn W Media</h1>
         <p>Aus Leidenschaft.</p>
     </section>
 
@@ -83,7 +83,7 @@
             <a href="https://www.tiktok.com/@finnw_foto_videografie?_r=1&_t=ZG-937rgkUyYQD" target="_blank">TikTok</a>
         </div>
         <p class="footer-note">Diese Website dient ausschließlich als Portfolio, um meine aktuellen Werke zu präsentieren.</p>
-        <p style="margin-bottom: 10px; font-weight: 500;">&copy; 2026 Finn W. Foto/Videografie</p>
+        <p style="margin-bottom: 10px; font-weight: 500;">&copy; 2026 FinnW Media</p>
         <div class="legal-links">
             <a href="impressum.html">Impressum</a>
             <a href="datenschutz.html">Datenschutzerklärung</a>
@@ -96,7 +96,6 @@
             container.style.padding = "0";
             container.style.background = "transparent";
             container.style.border = "none";
-            // Hier ist dein Google Forms Iframe eingebunden:
             container.innerHTML = `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1cl9rq43t9bcWUq2N-B_iNuRDM3ggI09NYnI_vgY_AQuKjg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:24px;">Wird geladen…</iframe>`;
         }
         
