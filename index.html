@@ -23,8 +23,11 @@
         .nav-links a { font-size: 38px; font-weight: 600; text-decoration: none; color: var(--apple-text); display: block; margin-bottom: 25px; }
         
         .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        /* Hier wird das Logo für die Animation und Größe angesprochen */
-        .hero-logo { width: 100%; max-width: 500px; height: auto; margin-bottom: 20px; animation: fadeIn 1.5s ease-out; }
+        
+        /* Container für das Logo, um Ruckler beim Tausch zu vermeiden */
+        .logo-container { width: 100%; max-width: 500px; height: auto; margin-bottom: 20px; animation: fadeIn 1.5s ease-out; }
+        .hero-logo { width: 100%; height: auto; display: block; }
+
         .hero h1 { font-size: 48px; letter-spacing: -1.2px; font-weight: 700; }
         .hero p { font-size: 24px; color: #86868b; }
         
@@ -61,8 +64,10 @@
     </div>
     
     <section class="hero">
-        <img src="logo.png" alt="FinnW Media Logo" class="hero-logo">
-        <h1>Finn W Media</h1>
+        <div class="logo-container">
+            <img id="mainLogo" src="Logo Animiert gif.gif" alt="FinnW Media Logo" class="hero-logo">
+        </div>
+        <h1>FinnW Media</h1>
         <p>Aus Leidenschaft.</p>
     </section>
 
@@ -91,6 +96,17 @@
     </footer>
 
     <script>
+        // LOGO LOGIK: GIF zu STATISCH
+        window.onload = function() {
+            const logo = document.getElementById('mainLogo');
+            const animationDuration = 3000; // ZEIT IN MILLISEKUNDEN (3000 = 3 Sek)
+            const staticImage = "logo.png"; // Name deiner statischen Datei (PNG oder JPG)
+
+            setTimeout(function() {
+                logo.src = staticImage;
+            }, animationDuration);
+        };
+
         function loadGoogleForm() {
             const container = document.getElementById('form-container');
             container.style.padding = "0";
