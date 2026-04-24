@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>FinnW Media</title>
+    <link href="https://finnvideo.de/feed.xml" rel="self" />
+    <link href="https://finnvideo.de" />
+    <updated>2026-04-24T15:17:15+02:00</updated>
+    <author>
+        <name>Finn Wasmer</name>
+    </author>
+    <id>https://finnvideo.de</id>
+
+    <entry>
+        <title>Ich arbeite an einer neuen Website!</title>
+        <author>
+            <name>Finn Wasmer</name>
+        </author>
+        <link href="https://finnvideo.de/ich-arbeite-an-einer-neuen-website.html"/>
+        <id>https://finnvideo.de/ich-arbeite-an-einer-neuen-website.html</id>
+
+        <updated>2026-04-24T15:17:15+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Schön, dass du mich auf meiner Website besuchen möchtest! Momentan arbeite ich an einer neuen Website! Schau doch in ein paar Tagen nochmal vorbei.&nbsp; Falls es dringend ist, kannst du mich immernoch über Instagram oder per Email erreichen! Instagram: FinnW Media , Email: Finnw.media@finnvideo.de
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    Schön, dass du mich auf meiner Website besuchen möchtest! Momentan arbeite ich an einer neuen Website! Schau doch in ein paar Tagen nochmal vorbei.&nbsp;
+  </p>
+
+  <p>
+    Falls es dringend ist, kannst du mich immernoch über Instagram oder per Email erreichen! Instagram: FinnW Media , Email: Finnw.media@finnvideo.de
+  </p>
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
+</feed>

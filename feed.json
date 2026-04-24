@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "FinnW Media",
+    "description": "",
+    "home_page_url": "https://finnvideo.de",
+    "feed_url": "https://finnvideo.de/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Finn Wasmer"
+    },
+    "items": [
+        {
+            "id": "https://finnvideo.de/ich-arbeite-an-einer-neuen-website.html",
+            "url": "https://finnvideo.de/ich-arbeite-an-einer-neuen-website.html",
+            "title": "Ich arbeite an einer neuen Website!",
+            "summary": "Schön, dass du mich auf meiner Website besuchen möchtest! Momentan arbeite ich an einer neuen Website! Schau doch in ein paar Tagen nochmal vorbei.&nbsp; Falls es dringend ist, kannst du mich immernoch über Instagram oder per Email erreichen! Instagram: FinnW Media , Email: Finnw.media@finnvideo.de",
+            "content_html": "\n  <p>\n    Schön, dass du mich auf meiner Website besuchen möchtest! Momentan arbeite ich an einer neuen Website! Schau doch in ein paar Tagen nochmal vorbei.&nbsp;\n  </p>\n\n  <p>\n    Falls es dringend ist, kannst du mich immernoch über Instagram oder per Email erreichen! Instagram: FinnW Media , Email: Finnw.media@finnvideo.de\n  </p>\n\n  <p>\n    \n  </p>",
+            "author": {
+                "name": "Finn Wasmer"
+            },
+            "tags": [
+            ],
+            "date_published": "2026-04-24T15:17:15+02:00",
+            "date_modified": "2026-04-24T15:17:15+02:00"
+        }
+    ]
+}
