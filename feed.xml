@@ -3,7 +3,7 @@
     <title>FinnW Media</title>
     <link href="https://finnvideo.de/feed.xml" rel="self" />
     <link href="https://finnvideo.de" />
-    <updated>2026-04-24T18:09:56+02:00</updated>
+    <updated>2026-04-24T18:12:08+02:00</updated>
     <author>
         <name>Finn Wasmer</name>
     </author>
@@ -20,7 +20,7 @@
         <updated>2026-04-24T18:07:04+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Hier findet ihr meine neuesten und öffentlichen Videografie Projekte, jeweils als Youtube Video.
+                    Hier findet ihr meine neuesten und öffentlichen Videografie Projekte, jeweils als Youtube Video. 70 Jahre Engentalwehren Übung 19.04.2026
                 ]]>
             </summary>
         <content type="html">
@@ -29,6 +29,10 @@
   <p>
     Hier findet ihr meine neuesten und öffentlichen Videografie Projekte, jeweils als Youtube Video.
   </p>
+
+    <h2 id="70-jahre-engentalwehren-uebung-19042026">
+      70 Jahre Engentalwehren Übung 19.04.2026
+    </h2>
 <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Bi24caK1Ys0?si=K2y_h7hlIw3_F9N5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
             ]]>
         </content>
