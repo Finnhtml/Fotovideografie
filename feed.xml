@@ -3,10 +3,34 @@
     <title>FinnW Media</title>
     <link href="https://finnvideo.de/feed.xml" rel="self" />
     <link href="https://finnvideo.de" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2026-04-24T18:09:56+02:00</updated>
     <author>
         <name>Finn Wasmer</name>
     </author>
     <id>https://finnvideo.de</id>
 
+    <entry>
+        <title>Videografie</title>
+        <author>
+            <name>Finn Wasmer</name>
+        </author>
+        <link href="https://finnvideo.de/videografie.html"/>
+        <id>https://finnvideo.de/videografie.html</id>
+
+        <updated>2026-04-24T18:07:04+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Hier findet ihr meine neuesten und öffentlichen Videografie Projekte, jeweils als Youtube Video.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    Hier findet ihr meine neuesten und öffentlichen Videografie Projekte, jeweils als Youtube Video.
+  </p>
+<div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Bi24caK1Ys0?si=K2y_h7hlIw3_F9N5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+            ]]>
+        </content>
+    </entry>
 </feed>
