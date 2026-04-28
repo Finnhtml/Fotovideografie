@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://finnvideo.de/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://finnwmedia.de/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
-<loc>https://finnvideo.de/</loc>
+<loc>https://finnwmedia.de/</loc>
 </url>
 <url>
-<loc>https://finnvideo.de/datenschutzerklaerung.html</loc>
+<loc>https://finnwmedia.de/datenschutzerklaerung.html</loc>
 <lastmod>2026-04-27T14:36:34+02:00</lastmod>
 </url>
 <url>
-<loc>https://finnvideo.de/ich-arbeite-an-einer-neuen-website.html</loc>
+<loc>https://finnwmedia.de/ich-arbeite-an-einer-neuen-website.html</loc>
 <lastmod>2026-04-24T15:17:15+02:00</lastmod>
 </url>
 <url>
-<loc>https://finnvideo.de/impressum-2.html</loc>
+<loc>https://finnwmedia.de/impressum-2.html</loc>
 <lastmod>2026-04-27T14:30:04+02:00</lastmod>
 </url>
 <url>
-<loc>https://finnvideo.de/videografie.html</loc>
+<loc>https://finnwmedia.de/videografie.html</loc>
 <lastmod>2026-04-26T00:46:21+02:00</lastmod>
 </url>
 </urlset>
